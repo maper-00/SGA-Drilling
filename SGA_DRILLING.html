@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGA Drilling SRL — Perforazioni & Scavi Industriali</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="navbar">
+  <div class="logo">SGA <span>DRILLING</span></div>
+  <nav>
+    <a href="#about">Chi Siamo</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#cantieri">Cantieri</a>
+    <a href="#sicurezza">Certificazioni</a>
+    <a href="#contatti" class="nav-cta">Contattaci</a>
+  </nav>
+</header>
+
+<!-- CINEMATIC HERO SCROLL CONTAINER -->
+<div id="hero-scroll-container">
+<section id="hero">
+
+  <!-- ===== CANTIERE SCENE — REAL PHOTO + SVG OVERLAY ===== -->
+  <div id="cantiere-wrap">
+    <!-- Real construction photo as background -->
+    <div id="hero-photo"></div>
+    <div id="hero-depth-fog"></div>
+    <div id="hero-color-tint"></div>
+    <svg id="cantiere-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Sky gradient -->
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d160d"/>
+          <stop offset="40%" stop-color="#111e11"/>
+          <stop offset="100%" stop-color="#152515"/>
+        </linearGradient>
+        <!-- Ground gradient -->
+        <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a1208"/>
+          <stop offset="100%" stop-color="#0a0a06"/>
+        </linearGradient>
+        <!-- Spotlight -->
+        <radialGradient id="spotlight1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#c8a84b" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#c8a84b" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="spotlight2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#fff9e6" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+        </radialGradient>
+        <!-- Noise / film grain filter -->
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+          <feColorMatrix type="saturate" values="0"/>
+          <feBlend in="SourceGraphic" mode="multiply" result="blend"/>
+          <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+        </filter>
+        <!-- Glow filter -->
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glowStrong" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="8" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="blur3">
+          <feGaussianBlur stdDeviation="3"/>
+        </filter>
+        <!-- Clip path for excavation pit -->
+        <clipPath id="pitClip">
+          <rect x="300" y="600" width="800" height="400"/>
+        </clipPath>
+      </defs>
+
+      <!-- ── SKY ── -->
+      <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+
+      <!-- Stars -->
+      <g opacity="0.6">
+        <circle cx="120" cy="80" r="1" fill="#fff" opacity="0.4"/>
+        <circle cx="340" cy="50" r="1.5" fill="#fff" opacity="0.5"/>
+        <circle cx="600" cy="100" r="1" fill="#fff" opacity="0.3"/>
+        <circle cx="900" cy="40" r="1" fill="#fff" opacity="0.6"/>
+        <circle cx="1100" cy="90" r="1.5" fill="#fff" opacity="0.4"/>
+        <circle cx="1400" cy="60" r="1" fill="#fff" opacity="0.5"/>
+        <circle cx="1650" cy="110" r="1" fill="#fff" opacity="0.3"/>
+        <circle cx="1800" cy="45" r="1.5" fill="#fff" opacity="0.4"/>
+        <circle cx="200" cy="160" r="1" fill="#fff" opacity="0.2"/>
+        <circle cx="750" cy="170" r="1" fill="#fff" opacity="0.3"/>
+        <circle cx="1300" cy="140" r="1.5" fill="#fff" opacity="0.4"/>
+        <circle cx="1750" cy="200" r="1" fill="#fff" opacity="0.2"/>
+        <circle cx="50" cy="210" r="1" fill="#fff" opacity="0.3"/>
+        <circle cx="450" cy="190" r="1" fill="#fff" opacity="0.25"/>
+        <circle cx="1550" cy="170" r="1.5" fill="#fff" opacity="0.35"/>
+      </g>
+
+      <!-- Distant haze / horizon atmospheric glow -->
+      <ellipse cx="960" cy="400" rx="700" ry="120" fill="#243d24" opacity="0.5"/>
+      <ellipse cx="960" cy="400" rx="400" ry="80" fill="#c8a84b" opacity="0.04"/>
+
+      <!-- ── DISTANT BACKGROUND — pylons / power lines ── -->
+      <line x1="100" y1="280" x2="100" y2="480" stroke="#2a3a2a" stroke-width="6"/>
+      <line x1="260" y1="300" x2="260" y2="480" stroke="#2a3a2a" stroke-width="6"/>
+      <line x1="100" y1="310" x2="260" y2="325" stroke="#2a3a2a" stroke-width="1.5"/>
+      <line x1="100" y1="340" x2="260" y2="355" stroke="#2a3a2a" stroke-width="1.5"/>
+
+      <line x1="1660" y1="280" x2="1660" y2="480" stroke="#2a3a2a" stroke-width="6"/>
+      <line x1="1820" y1="300" x2="1820" y2="480" stroke="#2a3a2a" stroke-width="6"/>
+      <line x1="1660" y1="310" x2="1820" y2="325" stroke="#2a3a2a" stroke-width="1.5"/>
+      <line x1="1660" y1="340" x2="1820" y2="355" stroke="#2a3a2a" stroke-width="1.5"/>
+
+      <!-- ── GROUND PLANE ── -->
+      <rect x="0" y="480" width="1920" height="600" fill="url(#groundGrad)"/>
+
+      <!-- Ground texture lines -->
+      <g stroke="#1e2e1a" stroke-width="1" opacity="0.5">
+        <line x1="0" y1="520" x2="1920" y2="520"/>
+        <line x1="0" y1="560" x2="1920" y2="560"/>
+        <line x1="0" y1="600" x2="1920" y2="600"/>
+      </g>
+      <!-- Tyre tracks -->
+      <g stroke="#2a2a1a" stroke-width="3" opacity="0.4" fill="none">
+        <path d="M0,550 Q400,530 700,545 Q1000,560 1300,548 Q1600,540 1920,555"/>
+        <path d="M0,565 Q400,545 700,560 Q1000,575 1300,563 Q1600,555 1920,570"/>
+      </g>
+
+      <!-- ── EXCAVATION PIT ── -->
+      <!-- Pit shadow -->
+      <ellipse cx="660" cy="610" rx="340" ry="40" fill="#000" opacity="0.7"/>
+      <!-- Pit walls -->
+      <path d="M320,600 L380,750 L940,750 L1000,600 Z" fill="#0d1205" stroke="#2a3a1a" stroke-width="2"/>
+      <path d="M320,600 L380,750 L420,750 L360,600 Z" fill="#151f0a" opacity="0.8"/>
+      <path d="M1000,600 L940,750 L960,750 L1020,600 Z" fill="#151f0a" opacity="0.8"/>
+      <!-- Pit floor -->
+      <ellipse cx="660" cy="750" rx="280" ry="25" fill="#0d1208"/>
+      <!-- Drilling hole in center -->
+      <ellipse cx="660" cy="752" rx="60" ry="10" fill="#000" filter="url(#blur3)"/>
+      <!-- Dirt piles -->
+      <path d="M280,598 Q320,560 380,580 Q340,590 310,600 Z" fill="#2a2010"/>
+      <path d="M950,598 Q1000,560 1040,580 Q1010,590 980,600 Z" fill="#2a2010"/>
+      <path d="M580,600 Q620,565 680,575 Q700,580 720,570 Q760,560 790,580 Q750,595 700,598 Q660,600 620,598 Z" fill="#2a2010"/>
+
+      <!-- ── DRILLING RIG — main machine ── -->
+      <!-- Crawler base -->
+      <rect x="560" y="560" width="200" height="50" rx="5" fill="#1a2a10" stroke="#2d4a1a" stroke-width="2"/>
+      <!-- Crawler tracks -->
+      <rect x="545" y="562" width="220" height="20" rx="10" fill="#141e0a" stroke="#3a5a20" stroke-width="1.5"/>
+      <rect x="545" y="580" width="220" height="8" rx="4" fill="#0d1508"/>
+      <!-- Track rollers -->
+      <g fill="#1e2e10" stroke="#3a5a20" stroke-width="1">
+        <circle cx="575" cy="572" r="8"/>
+        <circle cx="615" cy="572" r="8"/>
+        <circle cx="655" cy="572" r="8"/>
+        <circle cx="695" cy="572" r="8"/>
+        <circle cx="735" cy="572" r="8"/>
+      </g>
+      <!-- Machine body -->
+      <rect x="600" y="490" width="120" height="75" rx="3" fill="#1e3214" stroke="#2d4a1a" stroke-width="2"/>
+      <!-- Cabin with WINDOW (the zoom target) -->
+      <rect x="620" y="500" width="80" height="55" rx="4" fill="#162810" stroke="#3a5a20" stroke-width="2"/>
+      <!-- WINDOW — the portal we zoom into -->
+      <rect id="svg-window" x="630" y="508" width="60" height="38" rx="3" fill="#0a1a0a" stroke="#c8a84b" stroke-width="2"/>
+      <!-- Window glass shimmer -->
+      <rect x="630" y="508" width="60" height="38" rx="3" fill="none" stroke="rgba(200,168,75,0.3)" stroke-width="0.5"/>
+      <!-- Window interior light (warm amber) -->
+      <rect x="631" y="509" width="58" height="36" rx="2.5" fill="#1a0f00" opacity="0.9"/>
+      <rect x="631" y="509" width="58" height="36" rx="2.5" fill="url(#spotlight2)" opacity="0.8"/>
+      <!-- Window cross frame -->
+      <line x1="660" y1="508" x2="660" y2="546" stroke="#c8a84b" stroke-width="1" opacity="0.5"/>
+      <line x1="630" y1="527" x2="690" y2="527" stroke="#c8a84b" stroke-width="1" opacity="0.5"/>
+      <!-- Cab indicator lights -->
+      <circle cx="640" cy="514" r="2" fill="#c8a84b" opacity="0.8" filter="url(#glow)"/>
+      <circle cx="680" cy="514" r="2" fill="#4a8a3a" opacity="0.8" filter="url(#glow)"/>
+      <!-- Engine grill -->
+      <rect x="600" y="510" width="20" height="40" rx="2" fill="#141e0a"/>
+      <line x1="605" y1="514" x2="615" y2="514" stroke="#2a3a1a" stroke-width="1.5"/>
+      <line x1="605" y1="520" x2="615" y2="520" stroke="#2a3a1a" stroke-width="1.5"/>
+      <line x1="605" y1="526" x2="615" y2="526" stroke="#2a3a1a" stroke-width="1.5"/>
+      <line x1="605" y1="532" x2="615" y2="532" stroke="#2a3a1a" stroke-width="1.5"/>
+      <line x1="605" y1="538" x2="615" y2="538" stroke="#2a3a1a" stroke-width="1.5"/>
+      <line x1="605" y1="544" x2="615" y2="544" stroke="#2a3a1a" stroke-width="1.5"/>
+
+      <!-- ── DRILL MAST ── -->
+      <!-- Main mast tower -->
+      <rect x="652" y="200" width="16" height="300" rx="2" fill="#1e3214" stroke="#2d4a1a" stroke-width="1.5"/>
+      <!-- Mast cross braces -->
+      <g stroke="#3a5a20" stroke-width="1.5" opacity="0.7">
+        <line x1="652" y1="240" x2="668" y2="260"/>
+        <line x1="668" y1="240" x2="652" y2="260"/>
+        <line x1="652" y1="300" x2="668" y2="320"/>
+        <line x1="668" y1="300" x2="652" y2="320"/>
+        <line x1="652" y1="360" x2="668" y2="380"/>
+        <line x1="668" y1="360" x2="652" y2="380"/>
+        <line x1="652" y1="420" x2="668" y2="440"/>
+        <line x1="668" y1="420" x2="652" y2="440"/>
+      </g>
+      <!-- Mast cap -->
+      <polygon points="652,200 660,185 668,200" fill="#c8a84b" opacity="0.8" filter="url(#glow)"/>
+      <!-- Mast warning light -->
+      <circle cx="660" cy="188" r="4" fill="#c8a84b" filter="url(#glowStrong)">
+        <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Drill rod (rotating) -->
+      <rect x="656" y="490" width="8" height="280" rx="2" fill="#2a3a1a" stroke="#3a5a20" stroke-width="1">
+        <animateTransform attributeName="transform" type="rotate" from="0 660 490" to="360 660 490" dur="4s" repeatCount="indefinite"/>
+      </rect>
+      <!-- Drill head -->
+      <polygon points="652,765 660,790 668,765" fill="#c8a84b" opacity="0.9" filter="url(#glow)">
+        <animateTransform attributeName="transform" type="rotate" from="0 660 490" to="360 660 490" dur="4s" repeatCount="indefinite"/>
+      </polygon>
+      <!-- Drill pulleys -->
+      <circle cx="660" cy="210" r="12" fill="#1a2a10" stroke="#c8a84b" stroke-width="1.5"/>
+      <circle cx="660" cy="210" r="6" fill="#c8a84b" opacity="0.5"/>
+      <circle cx="660" cy="460" r="10" fill="#1a2a10" stroke="#3a5a20" stroke-width="1.5"/>
+      <!-- Cable -->
+      <line x1="660" y1="222" x2="660" y2="460" stroke="#c8a84b" stroke-width="1" opacity="0.4"/>
+
+      <!-- ── EXHAUST SMOKE ── -->
+      <g opacity="0.35" filter="url(#blur3)">
+        <circle cx="608" cy="480" r="18" fill="#3a3a30">
+          <animate attributeName="cy" values="480;450;420;400" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.35;0.25;0.1;0" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="18;24;30;36" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="612" cy="465" r="14" fill="#3a3a30">
+          <animate attributeName="cy" values="465;435;405;385" dur="2.8s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.3;0.2;0.1;0" dur="2.8s" begin="0.5s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="14;20;26;32" dur="2.8s" begin="0.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="604" cy="475" r="10" fill="#4a4a38">
+          <animate attributeName="cy" values="475;445;415;395" dur="3.2s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.3;0.2;0.05;0" dur="3.2s" begin="1s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="10;16;22;28" dur="3.2s" begin="1s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- ── EXCAVATOR (right side) ── -->
+      <!-- Body -->
+      <rect x="1100" y="530" width="180" height="70" rx="5" fill="#1a2a10" stroke="#2d4a1a" stroke-width="2"/>
+      <!-- Tracks -->
+      <rect x="1085" y="575" width="210" height="25" rx="12" fill="#0d1508" stroke="#2a3a18" stroke-width="1.5"/>
+      <!-- Cabin -->
+      <rect x="1120" y="500" width="80" height="40" rx="3" fill="#162810" stroke="#2d4a1a" stroke-width="1.5"/>
+      <!-- Excavator window -->
+      <rect x="1130" y="504" width="60" height="30" rx="2" fill="#0f1e0a" stroke="#3a5a20" stroke-width="1"/>
+      <rect x="1131" y="505" width="58" height="28" rx="1.5" fill="#0a1205" opacity="0.9"/>
+      <!-- Light on cab -->
+      <circle cx="1135" cy="508" r="3" fill="#c8a84b" opacity="0.7" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.7;0.4;0.7" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Arm base -->
+      <rect x="1200" y="520" width="16" height="20" rx="2" fill="#1e3214" stroke="#2d4a1a" stroke-width="1"/>
+      <!-- Boom arm -->
+      <line x1="1208" y1="520" x2="1280" y2="440" stroke="#1e3214" stroke-width="14" stroke-linecap="round"/>
+      <line x1="1208" y1="520" x2="1280" y2="440" stroke="#2d4a1a" stroke-width="12" stroke-linecap="round"/>
+      <!-- Stick arm -->
+      <line x1="1280" y1="440" x2="1320" y2="510" stroke="#1e3214" stroke-width="10" stroke-linecap="round"/>
+      <line x1="1280" y1="440" x2="1320" y2="510" stroke="#2d4a1a" stroke-width="8" stroke-linecap="round"/>
+      <!-- Bucket -->
+      <path d="M1310,508 Q1340,505 1345,525 Q1340,545 1315,540 Q1300,535 1305,518 Z" fill="#162810" stroke="#2d4a1a" stroke-width="2"/>
+      <!-- Bucket teeth -->
+      <g fill="#c8a84b" opacity="0.6">
+        <rect x="1316" y="537" width="4" height="8" rx="1"/>
+        <rect x="1325" y="539" width="4" height="8" rx="1"/>
+        <rect x="1334" y="538" width="4" height="8" rx="1"/>
+      </g>
+      <!-- Dirt on bucket -->
+      <path d="M1313,512 Q1330,508 1342,515 Q1338,520 1320,522 Z" fill="#2a1e08" opacity="0.7"/>
+
+      <!-- ── CONSTRUCTION CRANE (far right) ── -->
+      <!-- Mast -->
+      <rect x="1700" y="200" width="20" height="380" rx="2" fill="#1a2a10" stroke="#2a3a1a" stroke-width="1.5"/>
+      <!-- Horizontal jib -->
+      <rect x="1550" y="200" width="300" height="12" rx="2" fill="#1a2a10" stroke="#2a3a1a" stroke-width="1.5"/>
+      <!-- Counter-jib -->
+      <rect x="1700" y="200" width="100" height="10" rx="2" fill="#1e3214"/>
+      <rect x="1790" y="190" width="20" height="30" rx="2" fill="#2d4a1a"/>
+      <!-- Crane cables -->
+      <line x1="1620" y1="212" x2="1620" y2="400" stroke="#3a5a20" stroke-width="1.5" opacity="0.6"/>
+      <line x1="1620" y1="400" x2="1640" y2="400" stroke="#3a5a20" stroke-width="1.5" opacity="0.6"/>
+      <!-- Hook block -->
+      <rect x="1610" y="395" width="20" height="15" rx="2" fill="#1e3214" stroke="#2d4a1a" stroke-width="1"/>
+      <!-- Crane warning light -->
+      <circle cx="1850" cy="195" r="5" fill="#ff4444" opacity="0.8" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1560" cy="195" r="4" fill="#c8a84b" opacity="0.7" filter="url(#glow)">
+        <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Tower braces -->
+      <g stroke="#2a3a1a" stroke-width="1.5" opacity="0.5">
+        <line x1="1700" y1="250" x2="1720" y2="280"/>
+        <line x1="1720" y1="250" x2="1700" y2="280"/>
+        <line x1="1700" y1="310" x2="1720" y2="340"/>
+        <line x1="1720" y1="310" x2="1700" y2="340"/>
+        <line x1="1700" y1="370" x2="1720" y2="400"/>
+        <line x1="1720" y1="370" x2="1700" y2="400"/>
+      </g>
+
+      <!-- ── WORKER CONTAINERS / SITE OFFICE (left side) ── -->
+      <!-- Container 1 (back) -->
+      <rect x="80" y="520" width="200" height="90" rx="3" fill="#141e0a" stroke="#1e2e10" stroke-width="2"/>
+      <rect x="80" y="520" width="200" height="15" rx="2" fill="#1e2e10"/>
+      <!-- Stripes on container -->
+      <rect x="80" y="523" width="200" height="4" fill="#c8a84b" opacity="0.2"/>
+      <!-- Windows row -->
+      <rect x="95" y="542" width="30" height="22" rx="2" fill="#0a1205" stroke="#2a3a18" stroke-width="1"/>
+      <rect x="140" y="542" width="30" height="22" rx="2" fill="#0a1205" stroke="#2a3a18" stroke-width="1"/>
+      <rect x="185" y="542" width="30" height="22" rx="2" fill="#0a1205" stroke="#2a3a18" stroke-width="1"/>
+      <!-- Light in container window 1 -->
+      <rect x="96" y="543" width="28" height="20" rx="1.5" fill="#1a0f00" opacity="0.8"/>
+      <rect x="96" y="543" width="28" height="20" rx="1.5" fill="url(#spotlight2)" opacity="0.6"/>
+      <!-- Door -->
+      <rect x="235" y="548" width="35" height="62" rx="2" fill="#0f180a" stroke="#2a3a18" stroke-width="1"/>
+      <circle cx="245" cy="579" r="2" fill="#c8a84b" opacity="0.5"/>
+
+      <!-- Container 2 (front, smaller) -->
+      <rect x="80" y="610" width="160" height="70" rx="3" fill="#121a08" stroke="#1e2e10" stroke-width="1.5"/>
+      <rect x="80" y="610" width="160" height="12" rx="2" fill="#1a2a0a"/>
+      <rect x="95" y="628" width="25" height="18" rx="2" fill="#1a0f00" stroke="#2a3a18" stroke-width="1"/>
+      <rect x="96" y="629" width="23" height="16" rx="1.5" fill="url(#spotlight2)" opacity="0.5"/>
+      <rect x="130" y="628" width="25" height="18" rx="2" fill="#0a1205" stroke="#2a3a18" stroke-width="1"/>
+
+      <!-- ── SITE FENCING ── -->
+      <g stroke="#2d4a1a" stroke-width="2" opacity="0.5">
+        <!-- Left fence -->
+        <line x1="0" y1="490" x2="80" y2="490"/>
+        <line x1="0" y1="490" x2="0" y2="520"/>
+        <line x1="20" y1="490" x2="20" y2="520"/>
+        <line x1="40" y1="490" x2="40" y2="520"/>
+        <line x1="60" y1="490" x2="60" y2="520"/>
+        <line x1="80" y1="490" x2="80" y2="520"/>
+        <!-- Right fence -->
+        <line x1="1100" y1="490" x2="1920" y2="490"/>
+        <line x1="1100" y1="490" x2="1100" y2="520"/>
+        <line x1="1150" y1="490" x2="1150" y2="520"/>
+        <line x1="1200" y1="490" x2="1200" y2="520"/>
+      </g>
+
+      <!-- ── FLOODLIGHTS ── -->
+      <!-- Left floodlight pole -->
+      <rect x="200" y="380" width="8" height="120" rx="2" fill="#1e2e10" stroke="#2a3a1a" stroke-width="1"/>
+      <rect x="188" y="376" width="32" height="10" rx="3" fill="#1e2e10" stroke="#2a3a1a" stroke-width="1"/>
+      <ellipse cx="204" cy="376" rx="16" ry="6" fill="#c8a84b" opacity="0.15" filter="url(#glow)"/>
+      <!-- Floodlight beam -->
+      <polygon points="188,382 80,500 320,500" fill="#c8a84b" opacity="0.04"/>
+      <!-- Floodlight glow -->
+      <ellipse cx="204" cy="376" rx="20" ry="8" fill="#c8a84b" filter="url(#glowStrong)" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.6;0.4" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+
+      <!-- Right floodlight pole -->
+      <rect x="1440" y="350" width="8" height="140" rx="2" fill="#1e2e10" stroke="#2a3a1a" stroke-width="1"/>
+      <rect x="1428" y="346" width="32" height="10" rx="3" fill="#1e2e10" stroke="#2a3a1a" stroke-width="1"/>
+      <ellipse cx="1444" cy="346" rx="16" ry="6" fill="#c8a84b" opacity="0.15" filter="url(#glow)"/>
+      <polygon points="1428,352 1300,500 1560,500" fill="#c8a84b" opacity="0.04"/>
+      <ellipse cx="1444" cy="346" rx="20" ry="8" fill="#c8a84b" filter="url(#glowStrong)" opacity="0.35">
+        <animate attributeName="opacity" values="0.35;0.55;0.35" dur="5s" begin="1s" repeatCount="indefinite"/>
+      </ellipse>
+
+      <!-- ── MATERIAL PILES ── -->
+      <path d="M1380,490 Q1420,450 1480,470 Q1500,480 1510,490 Z" fill="#2a2010" opacity="0.9"/>
+      <path d="M1390,490 Q1440,455 1490,472 Q1502,482 1510,490 Z" fill="#342810" opacity="0.6"/>
+      <path d="M1500,490 Q1530,468 1570,475 Q1585,483 1590,490 Z" fill="#2a2010" opacity="0.9"/>
+
+      <!-- Pipe stacks -->
+      <g fill="#1a2a10" stroke="#2d4a1a" stroke-width="1">
+        <ellipse cx="1450" cy="490" rx="20" ry="6"/>
+        <rect x="1430" y="484" width="40" height="10"/>
+        <ellipse cx="1450" cy="484" rx="20" ry="6"/>
+        <rect x="1430" y="478" width="40" height="10"/>
+        <ellipse cx="1450" cy="478" rx="20" ry="6"/>
+      </g>
+
+      <!-- ── DUST PARTICLES ANIMATED ── -->
+      <g opacity="0.3">
+        <circle cx="500" cy="600" r="3" fill="#c8a84b">
+          <animateMotion path="M0,0 Q30,-80 60,-150 Q80,-200 40,-250" dur="5s" repeatCount="indefinite" begin="0s"/>
+          <animate attributeName="opacity" values="0.3;0.6;0;0" dur="5s" repeatCount="indefinite"/>
+          <animate attributeName="r" values="3;5;6;2" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="700" cy="580" r="2" fill="#c8a84b">
+          <animateMotion path="M0,0 Q-20,-60 -10,-130 Q0,-180 30,-220" dur="4s" repeatCount="indefinite" begin="1s"/>
+          <animate attributeName="opacity" values="0.3;0.5;0;0" dur="4s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+        <circle cx="620" cy="620" r="4" fill="#c8a84b">
+          <animateMotion path="M0,0 Q50,-70 80,-140 Q100,-200 70,-260" dur="6s" repeatCount="indefinite" begin="2s"/>
+          <animate attributeName="opacity" values="0.25;0.5;0;0" dur="6s" repeatCount="indefinite" begin="2s"/>
+          <animate attributeName="r" values="4;6;4;2" dur="6s" repeatCount="indefinite" begin="2s"/>
+        </circle>
+        <circle cx="800" cy="600" r="2" fill="#a08030">
+          <animateMotion path="M0,0 Q-40,-90 -20,-160 Q0,-210 -30,-250" dur="5.5s" repeatCount="indefinite" begin="0.5s"/>
+          <animate attributeName="opacity" values="0.2;0.4;0;0" dur="5.5s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+      </g>
+
+      <!-- ── FOREGROUND ELEMENTS ── -->
+      <!-- Barricade tapes / warning barriers -->
+      <rect x="0" y="480" width="1920" height="5" fill="#c8a84b" opacity="0.08"/>
+      <!-- Safety cone left -->
+      <polygon points="395,485 380,500 410,500" fill="#c85a1a" opacity="0.8"/>
+      <rect x="378" y="500" width="34" height="4" rx="1" fill="#c85a1a" opacity="0.6"/>
+      <!-- Safety cone center -->
+      <polygon points="960,485 948,500 972,500" fill="#c85a1a" opacity="0.7"/>
+      <rect x="946" y="500" width="28" height="4" rx="1" fill="#c85a1a" opacity="0.5"/>
+
+      <!-- ── ATMOSPHERIC OVERLAYS ── -->
+      <!-- Ground fog layer -->
+      <rect x="0" y="450" width="1920" height="80" fill="url(#groundGrad)" opacity="0.3"/>
+      <!-- Cinematic letterbox suggestion -->
+      <rect x="0" y="0" width="1920" height="40" fill="#000" opacity="0.5"/>
+      <rect x="0" y="1040" width="1920" height="40" fill="#000" opacity="0.5"/>
+      <!-- Scanlines cinematic texture -->
+      <rect width="1920" height="1080" fill="url(#grain)" opacity="0.03"/>
+
+      <!-- ── OVERALL VIGNETTE ── -->
+      <radialGradient id="vig" cx="50%" cy="50%" r="70%">
+        <stop offset="0%" stop-color="transparent"/>
+        <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+      </radialGradient>
+      <rect width="1920" height="1080" fill="url(#vig)"/>
+    </svg>
+  </div>
+  <!-- /cantiere-wrap -->
+
+  <!-- Bottom seamless blend into site -->
+  <div id="hero-bottom-blend"></div>
+
+  <!-- Vignette overlay -->
+  <div class="hero-vignette" id="hero-vignette"></div>
+
+  <!-- Dust particles -->
+  <div class="hero-dust" id="dust"></div>
+
+  <!-- Hero UI (fades out as scroll begins) -->
+  <div id="hero-ui">
+    <div class="hero-eyebrow">Perforazioni · Scavi · Trivellazioni Industriali</div>
+    <h1 class="hero-title">
+      SGA<br>
+      <span class="accent">DRILLING</span><br>
+      SRL
+    </h1>
+    <div class="hero-subtitle">Dove il suolo incontra la tecnologia</div>
+    <div class="hero-cta-group">
+      <a href="#about" class="btn-primary">Scopri i Servizi</a>
+      <a href="#contatti" class="btn-secondary">Richiedi Preventivo</a>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div id="scroll-hint">Scorri per entrare nel cantiere</div>
+
+  <!-- Side stats -->
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">500+</div><div class="lbl">Cantieri completati</div></div>
+    <div class="hero-stat"><div class="num">25</div><div class="lbl">Anni di esperienza</div></div>
+    <div class="hero-stat"><div class="num">100%</div><div class="lbl">Committenti soddisfatti</div></div>
+  </div>
+  <div class="hero-badges">
+    <div class="badge">Fondati nel 1998</div>
+    <div class="badge">25+ anni di esperienza</div>
+    <div class="badge">ISO 9001 Certificati</div>
+    <div class="badge">Sicurezza garantita</div>
+  </div>
+
+</section>
+</div><!-- /hero-scroll-container -->
+
+<div class="sep-full"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal-left">
+        <div class="section-label">Chi Siamo</div>
+        <h2 class="section-title">Forza.<br><span class="accent">Precisione.</span><br>Esperienza.</h2>
+        <div class="sep-line"></div>
+        <p>SGA Drilling SRL è un'azienda leader nel settore delle perforazioni e degli scavi industriali, con oltre 25 anni di esperienza maturata su centinaia di cantieri in tutta Italia.</p>
+        <p>Offriamo soluzioni complete e certificate per ogni tipo di intervento nel sottosuolo: dalla trivellazione profonda al movimento terra su larga scala, sempre con i più elevati standard di sicurezza e qualità.</p>
+        <p>Il nostro parco macchine all'avanguardia e il team di professionisti altamente qualificati ci permettono di affrontare anche i progetti più complessi, garantendo tempi certi e risultati impeccabili.</p>
+        <div class="about-features">
+          <div class="feature-chip">Tecnologia avanzata</div>
+          <div class="feature-chip">Team certificato</div>
+          <div class="feature-chip">Puntualità garantita</div>
+          <div class="feature-chip">Sicurezza totale</div>
+          <div class="feature-chip">Qualità premium</div>
+          <div class="feature-chip">Assistenza continua</div>
+        </div>
+      </div>
+      <div class="about-visual reveal-right">
+        <div class="about-card">
+          <div class="about-card-num">SGA</div>
+          <div class="kpi-grid">
+            <div class="kpi">
+              <div class="val">25+</div>
+              <div class="key">Anni attività</div>
+            </div>
+            <div class="kpi">
+              <div class="val">500+</div>
+              <div class="key">Cantieri</div>
+            </div>
+            <div class="kpi">
+              <div class="val">50+</div>
+              <div class="key">Macchinari</div>
+            </div>
+            <div class="kpi">
+              <div class="val">30+</div>
+              <div class="key">Professionisti</div>
+            </div>
+          </div>
+          <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(200,168,75,0.1)">
+            <div class="section-label" style="margin-bottom:0.5rem">Aree operative</div>
+            <p style="font-size:0.85rem;color:var(--cement);line-height:1.6">Nord e Centro Italia · Grandi opere infrastrutturali · Cantieri industriali e civili</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-full"></div>
+
+<!-- SERVIZI -->
+<section id="servizi">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Cosa facciamo</div>
+      <h2 class="section-title">I Nostri <span class="accent">Servizi</span></h2>
+    </div>
+    <div class="servizi-grid reveal">
+      <div class="servizio">
+        <div class="srv-num">01</div>
+        <div class="srv-icon">⚙</div>
+        <div class="srv-title">Perforazioni Geotecniche</div>
+        <p class="srv-desc">Perforazioni verticali e inclinate per indagini geotecniche, installazione di piezometri, pozzi di monitoraggio e campionamento del suolo.</p>
+      </div>
+      <div class="servizio">
+        <div class="srv-num">02</div>
+        <div class="srv-icon">⛏</div>
+        <div class="srv-title">Trivellazioni Industriali</div>
+        <p class="srv-desc">Trivellazioni profonde fino a centinaia di metri per pozzi idrici, impianti geotermici, fondazioni pali e micropali ad alta precisione.</p>
+      </div>
+      <div class="servizio">
+        <div class="srv-num">03</div>
+        <div class="srv-icon">🏗</div>
+        <div class="srv-title">Scavi e Movimento Terra</div>
+        <p class="srv-desc">Scavi di sbancamento, scavi a sezione ristretta, rimozione terreni contaminati e riprofilatura morfologica di grandi aree.</p>
+      </div>
+      <div class="servizio">
+        <div class="srv-num">04</div>
+        <div class="srv-icon">🔩</div>
+        <div class="srv-title">Fondazioni Speciali</div>
+        <p class="srv-desc">Realizzazione di pali trivellati, micropali, paratie e diaframmi per opere di sostegno e fondazioni profonde su terreni difficili.</p>
+      </div>
+      <div class="servizio">
+        <div class="srv-num">05</div>
+        <div class="srv-icon">💧</div>
+        <div class="srv-title">Pozzi Idrici</div>
+        <p class="srv-desc">Ricerca, perforazione e completamento di pozzi idrici per uso civile, agricolo e industriale. Analisi qualitativa e portata idrica certificata.</p>
+      </div>
+      <div class="servizio">
+        <div class="srv-num">06</div>
+        <div class="srv-icon">🌡</div>
+        <div class="srv-title">Impianti Geotermici</div>
+        <p class="srv-desc">Realizzazione di sonde geotermiche verticali per impianti di riscaldamento e raffrescamento a pompa di calore ad alta efficienza energetica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-full"></div>
+
+<!-- MACCHINARI -->
+<section id="macchinari">
+  <div class="container">
+    <div class="macch-intro">
+      <div class="reveal-left">
+        <div class="section-label">Parco Macchine</div>
+        <h2 class="section-title">Tecnologia<br><span class="accent">d'Avanguardia</span></h2>
+      </div>
+      <div class="reveal-right">
+        <p>Il nostro parco macchine viene costantemente aggiornato con le tecnologie più recenti. Ogni macchinario è certificato, revisionato periodicamente e operato da personale specializzato.</p>
+      </div>
+    </div>
+    <div class="macch-list reveal">
+      <div class="macch-item">
+        <div class="macch-icon">⚙</div>
+        <div class="macch-info">
+          <h4>Perforatrici Rotary</h4>
+          <p>Sistemi rotary ad alta coppia per perforazioni fino a 500m di profondità su qualsiasi tipo di formazione geologica.</p>
+        </div>
+      </div>
+      <div class="macch-item">
+        <div class="macch-icon">🔨</div>
+        <div class="macch-info">
+          <h4>Escavatori Cingolati</h4>
+          <p>Flotta di escavatori da 20 a 80 tonnellate per scavi in condizioni difficili, demolizioni e movimentazione terre su larga scala.</p>
+        </div>
+      </div>
+      <div class="macch-item">
+        <div class="macch-icon">⛏</div>
+        <div class="macch-info">
+          <h4>Sonde per Micropali</h4>
+          <p>Attrezzature specializzate per la realizzazione di micropali in ambienti confinati, con diametri da 76 a 300mm.</p>
+        </div>
+      </div>
+      <div class="macch-item">
+        <div class="macch-icon">🚛</div>
+        <div class="macch-info">
+          <h4>Autocarri & Dumper</h4>
+          <p>Mezzi di trasporto pesante per la gestione dei materiali di risulta e l'approvvigionamento di materiali inerti in cantiere.</p>
+        </div>
+      </div>
+      <div class="macch-item">
+        <div class="macch-icon">📡</div>
+        <div class="macch-info">
+          <h4>Strumentazione GPS</h4>
+          <p>Sistemi di topografia digitale e GPS ad alta precisione per il controllo di posizionamento e inclinazione delle perforazioni.</p>
+        </div>
+      </div>
+      <div class="macch-item">
+        <div class="macch-icon">💻</div>
+        <div class="macch-info">
+          <h4>Software Geotecnico</h4>
+          <p>Piattaforme BIM e software specialistici per la modellazione del sottosuolo, la pianificazione e il monitoraggio in tempo reale.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-full"></div>
+
+<!-- CANTIERI -->
+<section id="cantieri">
+  <div class="container">
+    <div class="progetti-header">
+      <div class="reveal-left">
+        <div class="section-label">Portfolio Lavori</div>
+        <h2 class="section-title">Cantieri<br><span class="accent">Realizzati</span></h2>
+      </div>
+      <div class="reveal-right">
+        <a href="#contatti" class="btn-secondary">Vedi tutti i progetti →</a>
+      </div>
+    </div>
+    <div class="progetti-grid reveal">
+      <div class="progetto featured">
+        <div class="progetto-tag">Progetto principale · Milano</div>
+        <h3>Fondazioni Torre Residenziale A30</h3>
+        <p>Realizzazione di 120 pali trivellati di grande diametro (Ø1200mm) fino a 30m di profondità per una torre residenziale di 18 piani nel centro di Milano. Progetto completato in 45 giorni lavorativi nel rispetto dei più severi vincoli urbani.</p>
+        <div class="progetto-meta">
+          <div class="meta-item">
+            <span class="ml">Durata</span>
+            <span class="mv">45 giorni</span>
+          </div>
+          <div class="meta-item">
+            <span class="ml">Volume</span>
+            <span class="mv">8.500 m³</span>
+          </div>
+          <div class="meta-item">
+            <span class="ml">Anno</span>
+            <span class="mv">2024</span>
+          </div>
+        </div>
+        <div class="progetto-bar"></div>
+      </div>
+      <div class="progetto">
+        <div class="progetto-tag">Industriale · Torino</div>
+        <h3>Polo Logistico Fiat Industrial</h3>
+        <p>Scavi di sbancamento e movimento terra per nuovo polo logistico da 25.000 mq. Gestione completa di 45.000 m³ di terreno.</p>
+        <div class="progetto-meta">
+          <div class="meta-item"><span class="ml">Anno</span><span class="mv">2024</span></div>
+          <div class="meta-item"><span class="ml">Area</span><span class="mv">25.000 m²</span></div>
+        </div>
+        <div class="progetto-bar"></div>
+      </div>
+      <div class="progetto">
+        <div class="progetto-tag">Geotermia · Bologna</div>
+        <h3>Campus Universitario Geotermico</h3>
+        <p>80 sonde geotermiche verticali a 120m per sistema di riscaldamento/raffrescamento del nuovo campus universitario.</p>
+        <div class="progetto-meta">
+          <div class="meta-item"><span class="ml">Anno</span><span class="mv">2023</span></div>
+          <div class="meta-item"><span class="ml">Sonde</span><span class="mv">80 pz</span></div>
+        </div>
+        <div class="progetto-bar"></div>
+      </div>
+      <div class="progetto">
+        <div class="progetto-tag">Idrico · Emilia</div>
+        <h3>Rete Pozzi Agricoli Valle Padana</h3>
+        <p>Perforazione e completamento di 12 pozzi idrici per uso agricolo in area alluvionale. Profondità media 85m, portata certificata.</p>
+        <div class="progetto-meta">
+          <div class="meta-item"><span class="ml">Anno</span><span class="mv">2023</span></div>
+          <div class="meta-item"><span class="ml">Pozzi</span><span class="mv">12 pz</span></div>
+        </div>
+        <div class="progetto-bar"></div>
+      </div>
+      <div class="progetto">
+        <div class="progetto-tag">Infrastrutture · Genova</div>
+        <h3>Consolidamento Versante Autostradale</h3>
+        <p>Realizzazione di 200+ micropali e tiranti per consolidamento versante a rischio frana lungo tratto autostradale A26.</p>
+        <div class="progetto-meta">
+          <div class="meta-item"><span class="ml">Anno</span><span class="mv">2022</span></div>
+          <div class="meta-item"><span class="ml">Micropali</span><span class="mv">200+</span></div>
+        </div>
+        <div class="progetto-bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-full"></div>
+
+<!-- NUMERI -->
+<section id="numeri">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:1rem">
+      <div class="section-label" style="justify-content:center">I Numeri</div>
+      <h2 class="section-title">SGA in <span class="accent">Cifre</span></h2>
+    </div>
+    <div class="numeri-grid reveal">
+      <div class="numero-box">
+        <div class="numero-lbl">Cantieri completati</div>
+        <div class="numero-big">500+</div>
+      </div>
+      <div class="numero-box">
+        <div class="numero-lbl">Anni di esperienza</div>
+        <div class="numero-big">25+</div>
+      </div>
+      <div class="numero-box">
+        <div class="numero-lbl">Km perforati</div>
+        <div class="numero-big">1200</div>
+      </div>
+      <div class="numero-box">
+        <div class="numero-lbl">Professionisti</div>
+        <div class="numero-big">30+</div>
+      </div>
+      <div class="numero-box">
+        <div class="numero-lbl">Macchinari in flotta</div>
+        <div class="numero-big">50+</div>
+      </div>
+      <div class="numero-box">
+        <div class="numero-lbl">Soddisfazione clienti</div>
+        <div class="numero-big">100%</div>
+      </div>
+      <div class="numero-box">
+        <div class="numero-lbl">Regioni operative</div>
+        <div class="numero-big">8</div>
+      </div>
+      <div class="numero-box">
+        <div class="numero-lbl">Ore di lavoro annue</div>
+        <div class="numero-big">50K</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-full"></div>
+
+<!-- SICUREZZA -->
+<section id="sicurezza">
+  <div class="container">
+    <div class="sic-grid">
+      <div class="sic-text reveal-left">
+        <div class="section-label">Safety First</div>
+        <h2 class="section-title">Sicurezza e<br><span class="accent">Certificazioni</span></h2>
+        <div class="sep-line"></div>
+        <p>La sicurezza è il valore fondante di SGA Drilling. Ogni cantiere viene pianificato e condotto secondo i più rigidi protocolli di sicurezza, con zero tolleranza per qualsiasi rischio evitabile.</p>
+        <p>Il nostro personale è costantemente formato e aggiornato. Operiamo con piani di sicurezza personalizzati per ogni intervento, in conformità con tutta la normativa vigente D.Lgs 81/08.</p>
+        <div class="sic-pillars">
+          <div class="pillar">
+            <h4>Formazione continua</h4>
+            <p>Tutto il personale riceve formazione periodica certificata su sicurezza, primo soccorso e procedure di emergenza.</p>
+          </div>
+          <div class="pillar">
+            <h4>DPI Avanzati</h4>
+            <p>Utilizzo sistematico di dispositivi di protezione individuale di ultima generazione su tutti i cantieri.</p>
+          </div>
+          <div class="pillar">
+            <h4>Piani di Sicurezza</h4>
+            <p>Redazione di POS e PSC personalizzati per ogni opera, con analisi dettagliata di tutti i rischi specifici.</p>
+          </div>
+          <div class="pillar">
+            <h4>Monitoraggio H24</h4>
+            <p>Supervisione costante di tutte le operazioni con reporting in tempo reale per i clienti e le autorità di controllo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sic-visual reveal-right">
+        <div class="cert-list">
+          <div class="cert-item">
+            <div class="cert-badge">✓</div>
+            <div class="cert-info">
+              <h4>ISO 9001:2015</h4>
+              <p>Sistema di gestione per la qualità — processi e procedure certificate</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge">✓</div>
+            <div class="cert-info">
+              <h4>ISO 14001:2015</h4>
+              <p>Sistema di gestione ambientale — rispetto dell'ecosistema garantito</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge">✓</div>
+            <div class="cert-info">
+              <h4>ISO 45001:2018</h4>
+              <p>Sistemi di gestione salute e sicurezza sul lavoro</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge">✓</div>
+            <div class="cert-info">
+              <h4>SOA OS2 · OS21</h4>
+              <p>Qualificazione per opere pubbliche — Opere di fondazioni speciali</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge">✓</div>
+            <div class="cert-info">
+              <h4>D.Lgs 81/08 Conforme</h4>
+              <p>Piena conformità al Testo Unico sulla Sicurezza nei Luoghi di Lavoro</p>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-badge">✓</div>
+            <div class="cert-info">
+              <h4>Certificazione RSPP</h4>
+              <p>Responsabile del Servizio di Prevenzione e Protezione interno certificato</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-full"></div>
+
+<!-- RECENSIONI -->
+<section id="recensioni">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">Testimonial</div>
+      <h2 class="section-title">Cosa Dicono<br>i <span class="accent">Clienti</span></h2>
+    </div>
+    <div class="rec-grid reveal">
+      <div class="rec-card">
+        <div class="rec-stars">★★★★★</div>
+        <p class="rec-text">"SGA Drilling ha eseguito le fondazioni del nostro complesso residenziale con una precisione e una professionalità che raramente si incontrano nel settore. Tempi rispettati al giorno, zero imprevisti."</p>
+        <div class="rec-author">
+          <div class="rec-avatar">MR</div>
+          <div>
+            <div class="rec-name">Marco Rossetti</div>
+            <div class="rec-role">Direttore Lavori — Costruttori Associati SpA</div>
+          </div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-stars">★★★★★</div>
+        <p class="rec-text">"Abbiamo affidato a SGA il consolidamento di un versante critico. La loro capacità tecnica e la gestione del cantiere sono state eccellenti. Li raccomandiamo senza riserve per qualsiasi opera complessa."</p>
+        <div class="rec-author">
+          <div class="rec-avatar">AL</div>
+          <div>
+            <div class="rec-name">Andrea Lucci</div>
+            <div class="rec-role">Ingegnere Strutturista — Studio Lucci & Partners</div>
+          </div>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-stars">★★★★★</div>
+        <p class="rec-text">"Per il nostro impianto geotermico abbiamo scelto SGA dopo un confronto accurato. Competenza tecnica superiore, rispetto dei costi preventivati e un servizio post-lavoro impeccabile. Partner di fiducia."</p>
+        <div class="rec-author">
+          <div class="rec-avatar">SF</div>
+          <div>
+            <div class="rec-name">Sara Ferrari</div>
+            <div class="rec-role">Responsabile Sostenibilità — GreenCampus Bologna</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sep-full"></div>
+
+<!-- CONTATTI -->
+<section id="contatti">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:3rem">
+      <div class="section-label" style="justify-content:center">Iniziamo a lavorare insieme</div>
+      <h2 class="section-title">Contattaci per un<br><span class="accent">Preventivo Gratuito</span></h2>
+    </div>
+    <div class="cont-grid">
+      <div class="cont-info reveal-left">
+        <p>Siamo pronti a valutare il tuo progetto senza impegno. Contattaci e un nostro tecnico specializzato ti risponderà entro 24 ore con una prima analisi del tuo intervento.</p>
+        <div class="cont-detail">
+          <div class="cont-icon">📍</div>
+          <div class="cont-detail-text">
+            <h4>Sede Operativa</h4>
+            <p>Via Industriale 42<br>20090 Segrate (MI) — Italia</p>
+          </div>
+        </div>
+        <div class="cont-detail">
+          <div class="cont-icon">📞</div>
+          <div class="cont-detail-text">
+            <h4>Telefono</h4>
+            <p>+39 02 1234 5678<br>Lun-Ven 8:00 – 18:00</p>
+          </div>
+        </div>
+        <div class="cont-detail">
+          <div class="cont-icon">✉</div>
+          <div class="cont-detail-text">
+            <h4>Email</h4>
+            <p>info@sgadrilling.it<br>preventivi@sgadrilling.it</p>
+          </div>
+        </div>
+        <div class="cont-detail">
+          <div class="cont-icon">🏢</div>
+          <div class="cont-detail-text">
+            <h4>Dati Aziendali</h4>
+            <p>SGA Drilling SRL — P.IVA 01234567890<br>REA MI-123456</p>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <div class="map-grid"></div>
+          <div class="map-pin">📍</div>
+          <div class="map-text">SGA Drilling SRL — Segrate (MI)</div>
+          <div class="map-sub">Integrare Google Maps con la posizione reale dell'azienda</div>
+        </div>
+      </div>
+      <div class="cont-form reveal-right">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nome *</label>
+            <input type="text" placeholder="Mario Rossi">
+          </div>
+          <div class="form-group">
+            <label>Azienda</label>
+            <input type="text" placeholder="Nome Azienda Srl">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" placeholder="mario@azienda.it">
+          </div>
+          <div class="form-group">
+            <label>Telefono</label>
+            <input type="tel" placeholder="+39 333 123 4567">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tipo di intervento *</label>
+          <select>
+            <option value="">Seleziona il servizio...</option>
+            <option>Perforazioni Geotecniche</option>
+            <option>Trivellazioni Industriali</option>
+            <option>Scavi e Movimento Terra</option>
+            <option>Fondazioni Speciali</option>
+            <option>Pozzi Idrici</option>
+            <option>Impianti Geotermici</option>
+            <option>Altro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Luogo del cantiere</label>
+          <input type="text" placeholder="Città, Regione">
+        </div>
+        <div class="form-group">
+          <label>Descrizione del progetto *</label>
+          <textarea placeholder="Descrivici il tuo progetto: tipo di intervento, dimensioni, tempistiche, eventuali criticità..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;padding:1.1rem;font-size:1rem;cursor:pointer" onclick="alert('Grazie! Il tuo messaggio è stato inviato. Ti risponderemo entro 24 ore.')">
+          Invia Richiesta Preventivo →
+        </button>
+        <p style="font-size:0.75rem;color:var(--cement);margin-top:0.8rem">
+          * Campi obbligatori. I tuoi dati sono trattati in conformità con il GDPR (D.Lgs 196/2003 e Reg. UE 679/2016).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">SGA <span>DRILLING</span></div>
+        <p class="footer-desc">Perforazioni, trivellazioni e scavi industriali con 25+ anni di esperienza. Affidabilità, tecnologia e sicurezza in ogni cantiere.</p>
+        <div style="margin-top:1.5rem;display:flex;gap:0.8rem">
+          <div style="width:36px;height:36px;background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.2);border-radius:2px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.9rem">in</div>
+          <div style="width:36px;height:36px;background:rgba(200,168,75,0.1);border:1px solid rgba(200,168,75,0.2);border-radius:2px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.9rem">f</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Servizi</h4>
+        <a href="#servizi">Perforazioni Geotecniche</a>
+        <a href="#servizi">Trivellazioni Industriali</a>
+        <a href="#servizi">Scavi e Movimento Terra</a>
+        <a href="#servizi">Fondazioni Speciali</a>
+        <a href="#servizi">Pozzi Idrici</a>
+        <a href="#servizi">Impianti Geotermici</a>
+      </div>
+      <div class="footer-col">
+        <h4>Azienda</h4>
+        <a href="#about">Chi Siamo</a>
+        <a href="#macchinari">Parco Macchine</a>
+        <a href="#cantieri">Portfolio</a>
+        <a href="#sicurezza">Certificazioni</a>
+        <a href="#numeri">I Nostri Numeri</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <a href="#">info@sgadrilling.it</a>
+        <a href="#">+39 02 1234 5678</a>
+        <a href="#">Via Industriale 42</a>
+        <a href="#">20090 Segrate (MI)</a>
+        <a href="#" style="margin-top:0.5rem;color:var(--gold)">→ Richiedi Preventivo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 SGA Drilling SRL — P.IVA 01234567890 — Tutti i diritti riservati</div>
+      <div class="footer-cert">
+        <span>ISO 9001</span>
+        <span>ISO 14001</span>
+        <span>ISO 45001</span>
+        <span>SOA OS2</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
